@@ -4,7 +4,7 @@ An OSINT tool for gathering information about phone numbers
 It was created by Spider Anongreyhat (Anonspidey) <br><br>
 
 ## Screenshot
-<img src="phone1.jpg"><br>
+<img src="phone1.jpg"><br><br>
 <img src="phone2.jpg"><br>
 
 ## How To install PhoneNumber-OSINT on termux:
