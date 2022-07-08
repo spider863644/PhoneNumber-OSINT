@@ -134,6 +134,6 @@ def loop():
         
     """)
     cont = input(Fore.YELLOW + Back.RED + "Do you wanna continue?[n/y]: " + Style.RESET_ALL)
-    if cont == "Y" or cont == "y":
+    if cont.lower == "Y":
         loop()
 loop()
