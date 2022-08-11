@@ -10,6 +10,7 @@ except ModuleNotFoundError:
     exit()
 from colorama import *
 from phonenumbers import geocoder, carrier, timezone
+colorama.init(autoreset=True)
 print(Fore.RED + "𝔻𝕚𝕤𝕔𝕝𝕒𝕚𝕞𝕖𝕣: 𝕌𝕤𝕖 𝕥𝕙𝕚𝕤 𝕥𝕠𝕠𝕝 𝕗𝕠𝕣 𝕖𝕕𝕦𝕔𝕒𝕥𝕚𝕠𝕟𝕒𝕝 𝕡𝕦𝕣𝕡𝕠𝕤𝕖𝕤 𝕠𝕟𝕝𝕪 \n\n𝕊𝕡𝕚𝕕𝕖𝕣 𝔸𝕟𝕠𝕟𝕘𝕣𝕖𝕪𝕙𝕒𝕥 𝕨𝕠𝕟\'𝕥 𝕓𝕖 𝕣𝕖𝕤𝕡𝕠𝕟𝕤𝕚𝕓𝕝𝕖 𝕗𝕠𝕣 𝕒𝕟𝕪 𝕞𝕚𝕤𝕦𝕤𝕖 𝕠𝕗 𝕥𝕙𝕚𝕤 𝕥𝕠𝕠𝕝 🌚🌚🌝") 
 t.sleep(5)
 os.system("clear")
@@ -17,8 +18,8 @@ def loop():
     os.system("clear")
     head = pyfiglet.figlet_format("PhoneNumber-OSINT")
     print (Fore.YELLOW + head)
-    print(Fore.RED + " Version 1.0".center(60))
-    print(Fore.YELLOW + "[+] " + Fore.GREEN + "Tool Name:PhoneNumber OSINT\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Author:Spider Anongreyhat(Anonspidey)\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Version:1.0\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Team:TermuxHackz Society\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Github:https://github.com/spider863644\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "WhatsApp:+2349052863644")
+    print(Fore.RED + " Version 1.2".center(60))
+    print(Fore.YELLOW + "[+] " + Fore.GREEN + "Tool Name:PhoneNumber OSINT\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Author:Spider Anongreyhat(Anonspidey)\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Version:1.2\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Team:TermuxHackz Society\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Github:https://github.com/spider863644\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "WhatsApp:+2349052863644")
     print(Fore.RED + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>" + Fore.CYAN + "Choose a valid option" + Fore.RED + "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<") 
     print(Fore.BLUE + """
 [1] Get basic information about  Phone Number
@@ -64,7 +65,7 @@ def loop():
     elif option == 3:
         os.system("clear")
         print(Fore.BLUE + """
-[1] Upload File(CSV)
+[1] Upload File
 [2] Paste Text
 """)
         try:
@@ -74,13 +75,35 @@ def loop():
             t.sleep(2)
             loop()
         if file == 1:
-            print(Fore.RED + "Unavailable!")
-            t.sleep(2)
-            loop()
+           contact_filename  = input("\n" + Fore.YELLOW + Back.RED + "Upload your file here[Enter file path]: " + Style.RESET_ALL)
+           try:
+               filename = open(contact_filename, "rt")
+           except:
+               print(Fore.RED + " File doesn't exist or invalid file path!")
+               t.sleep(2)
+               exit()
+         
+           country_code = input(Fore.GREEN + "Enter country code of the number you want to extract: " + Style.RESET_ALL)
+           if "+" not in country_code[0]:
+               print (Fore.RED + "Add \"+\" before country code ! ")
+               t.sleep(2)
+               loop()
+           phone_number_file = phonenumbers.PhoneNumberMatcher (str(filename.read()), country_code)         
+           global extracting
+           extracting = ""
+           print(Fore.CYAN + "Extracting phone numbers from uploaded file ")
+           for  extracting in phone_number_file:
+               if country_code in str(extracting):
+                   print(Fore.YELLOW + str(extracting))
+               
+           if len(str(extracting)) == 0:
+               print(Fore.RED + "Couldn\'t extract phone number because phone numbers was found in the file or county code wasn't added to the phone numbers")
+           elif country_code not in  str(extracting):
+               print(Fore.RED + "Couldn\'t find the matching country code")
+               t.sleep(2.4)      
         elif file == 2:
+            reg = ""
             text = input(Fore.GREEN + "Paste your text here: " + Style.RESET_ALL)
-            #reg = input(Fore.GREEN + "Enter region code[example \"ni\" for Nigeria] : " + Style.RESET_ALL)
-            reg = 'INDIA'
             phone = phonenumbers.PhoneNumberMatcher(text, reg)
             for PhoneNumbers in phone:
                 print(Fore.BLUE + "Extracting phone numbers from text")
@@ -88,6 +111,8 @@ def loop():
                 print(PhoneNumbers)
         else:
             print (Fore.RED + "Invalid option")
+            t.sleep (2)
+            loop()
     elif option == 4:
          PhoneNumber = input(Fore.GREEN + "Enter phone number with country code: " + Style.RESET_ALL)
          try:
