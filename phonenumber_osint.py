@@ -18,8 +18,8 @@ def loop():
     os.system("clear")
     head = pyfiglet.figlet_format("PhoneNumber-OSINT")
     print (Fore.YELLOW + head)
-    print(Fore.RED + " Version 1.3".center(60))
-    print(Fore.YELLOW + "[+] " + Fore.GREEN + "Tool Name:PhoneNumber OSINT\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Author:Spider Anongreyhat(Anonspidey)\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Version:1.3\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Team:TermuxHackz Society\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Github:https://github.com/spider863644\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "WhatsApp:+2349052863644")
+    print(Fore.RED + " Version 1.4".center(60))
+    print(Fore.YELLOW + "[+] " + Fore.GREEN + "Tool Name:PhoneNumber OSINT\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Author:Spider Anongreyhat(Anonspidey)\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Version:1.4\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Team:TermuxHackz Society\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "Github:https://github.com/spider863644\n" + Fore.YELLOW + "[+] " + Fore.GREEN + "WhatsApp:+2349052863644")
     print(Fore.RED + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>" + Fore.CYAN + "Choose a valid option" + Fore.RED + "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
     print(Fore.BLUE + """
 [1] Get basic information about  Phone Number
@@ -164,9 +164,10 @@ def loop():
 
            REDIRECTING TO MY WHATSAPP GROUP""")
         t. sleep(3)
-        os.system ("xdg-open https://chat.whatsapp.com/IWqGOsJPjkp2vXcMSJKYns")
+        os.system ("https://chat.whatsapp.com/FqM6BfHV2AAL8K7rOUCpbW")
     elif option == 7:
         print(Fore.YELLOW + " Thanks for using\nFollow me on GitHub")
+        os.system("https://github.com/spider863644")
         exit()
     else:
         print(Fore.RED + "Invalid option")
