@@ -2,7 +2,7 @@ import os, time as t
 os.system("clear")
 try:
     import colorama
-    import pyfiglet
+    #import pyfiglet
     import phonenumbers
 except ModuleNotFoundError:
     print("\033[1;31;40m Some requirements are missing!\n\nRun \"pip install -r requirements.txt\" then run \"python3 phonenumber_osint.py \"\033[1;37;40m" )
