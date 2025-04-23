@@ -4,7 +4,7 @@ An OSINT tool for gathering information about phone numbers
 It was created by Spider Anongreyhat (Anonspidey) <br><br>
 
 ## Screenshot
-<img src="phone1.jpg"><br><br>
+
 <img src="phone2.jpg"><br>
 
 ## How To install PhoneNumber-OSINT on termux:
@@ -56,7 +56,7 @@ python3 phonenumber_osint.py
 For educational purposes only
 
 ### Developer contacts
-WhatsApp:+2349052863644<br>
+
 Instagram: @anongreyhat<br>
 Telegram: @anongreyhat<br>
 
